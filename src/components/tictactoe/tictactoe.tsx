@@ -3,6 +3,7 @@ import { Board } from "./board";
 import TicTacToeIcon from '../../assets/icons/tic-tac-toe.png';
 import { Sidebar } from "../sidebar/sidebar";
 import { ToastContainer } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 type BoardArray = Array<Array<string | null>>;
 
@@ -98,6 +99,9 @@ export const TicTacToe = () => {
     setPlayer("X");
     setIsNoWinner(false);
   }
+
+  const navigate = useNavigate();
+  const back = () => navigate('/jogo-da-velha');
   return (
     <div className="tic-tac-toe xl:h-screen h-full w-full bg-[#0f172a] text-[#FFFFFF] pt-20 flex flex-col items-center">
       <Sidebar/>
@@ -114,9 +118,16 @@ export const TicTacToe = () => {
         <span>Sem vencedores</span> : 
         (winner && <span>{winner === "X" ? "Você venceu!!" : "Computador venceu! oh no :("}</span>) 
       }
-      <button 
-        className="reset bg-[#473080] mt-10 mb-8 p-2 w-18 rounded hover:shadow-2xl hover:shadow-purple-500" 
-        type="button" onClick={resartGame}>Reiniciar</button>
+      <div className="flex flex-row gap-x-4">
+        <button 
+          className="reset bg-[#473080] mt-10 mb-8 p-2 w-18 rounded hover:shadow-2xl hover:shadow-purple-500" 
+          type="button" onClick={resartGame}>Reiniciar
+        </button>
+        <button 
+          className="reset bg-[#473080] mt-10 mb-8 p-2 w-18 rounded hover:shadow-2xl hover:shadow-purple-500" 
+          type="button" onClick={back}>Voltar
+        </button>
+      </div>
     </div>
   );
 }
