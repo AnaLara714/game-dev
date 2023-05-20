@@ -12,17 +12,17 @@ export const TicTacToeHome = () => {
       <Helmet>
         <title>GameDev | Jogo da velha</title>
       </Helmet>
-      <div className="h-full w-full bg-[#0f172a] text-[#FFFFFF]">
+      <div className="h-screen w-full xl:h-screen bg-[#0f172a] text-[#FFFFFF]">
         <Sidebar/>
-        <div className="flex flex-col items-center pb-4">
+        <div className="flex flex-col items-center max-sm:ml-24">
           <div className='bg-[#473080] rounded-full p-2 flex justify-center items-center h-20 w-20 mb-2 mt-4'>
             <img src={TicTacToeIcon} className='h-14'/>
           </div>
           <span className="text-2xl font-bold mb-4">Jogo da Velha</span>
-          <div className="flex flex-col w-[28rem] border p-4 divide-y gap-y-6 divide-[#473080] rounded-md border-[#473080]">
+          <div className="flex flex-col w-[28rem] border flex-wrap p-4 divide-y gap-y-6 divide-[#473080] rounded-md border-[#473080] max-sm:w-80">
             <div className="flex flex-col">
               <span className="font-semibold italic">O que é?</span>
-              <span className="pl-4 pt-1">
+              <span className="pl-4 pt-1 flex flex-wrap">
                 O jogo da velha é um jogo de tabuleiro onde dois jogadores tentam formar 
                 uma linha reta com suas peças (X ou O) em um tabuleiro 3x3. O objetivo é vencer 
                 ao completar uma linha antes do oponente. É simples e popular em todo o mundo.
@@ -39,7 +39,7 @@ export const TicTacToeHome = () => {
             </div>
           </div>
           <button 
-            className="bg-[#473080] mt-2 mb-8 p-2 w-16 rounded hover:shadow-2xl hover:shadow-purple-500"
+            className="bg-[#473080] mt-4 p-2 w-16 rounded hover:shadow-2xl hover:shadow-purple-500"
             onClick={goPlay}
           >
             Jogar

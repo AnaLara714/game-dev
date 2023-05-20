@@ -102,31 +102,43 @@ export const TicTacToe = () => {
 
   const navigate = useNavigate();
   const back = () => navigate('/jogo-da-velha');
+  const inicio = () => navigate('/');
+  const exit = () => {
+    if (confirm("Deseja sair mesmo?"))
+      alert("então, tá.");
+      back();
+  }
   return (
-    <div className="tic-tac-toe xl:h-screen h-full w-full bg-[#0f172a] text-[#FFFFFF] pt-20 flex flex-col items-center">
+    <div className="tic-tac-toe h-screen w-full xl:h-screen bg-[#0f172a] text-[#FFFFFF] pt-20 pb-10 flex flex-col xl:flex-row justify-center">
       <Sidebar/>
-      <div className='bg-[#473080] rounded-full p-2 flex justify-center items-center h-20 w-20 mb-2'>
-        <img src={TicTacToeIcon} className='h-14'/>
-      </div>
-      <span className="text-2xl font-bold mb-4">Jogo da Velha</span>
-      <Board board={board} handleClick={handleOnClick}/>
-      <ToastContainer
-        position="top-center" autoClose={2000} hideProgressBar={false} newestOnTop={false}
-        closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored"
-      />
-      {isNoWinner ? 
-        <span>Sem vencedores</span> : 
-        (winner && <span>{winner === "X" ? "Você venceu!!" : "Computador venceu! oh no :("}</span>) 
-      }
-      <div className="flex flex-row gap-x-4">
-        <button 
-          className="reset bg-[#473080] mt-10 mb-8 p-2 w-18 rounded hover:shadow-2xl hover:shadow-purple-500" 
-          type="button" onClick={resartGame}>Reiniciar
-        </button>
-        <button 
-          className="reset bg-[#473080] mt-10 mb-8 p-2 w-18 rounded hover:shadow-2xl hover:shadow-purple-500" 
-          type="button" onClick={back}>Voltar
-        </button>
+      <div className="flex flex-col items-center w-full justify-center max-sm:ml-8">
+        <div className='bg-[#473080] rounded-full p-2 flex justify-center items-center h-20 w-20 mb-2'>
+          <img src={TicTacToeIcon} className='h-14'/>
+        </div>
+        <span className="text-2xl font-bold mb-4">Jogo da Velha</span>
+        <Board board={board} handleClick={handleOnClick}/>
+        <ToastContainer
+          position="top-center" autoClose={2000} hideProgressBar={false} newestOnTop={false}
+          closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored"
+        />
+        {isNoWinner ? 
+          <span>Sem vencedores</span> : 
+          (winner && <span>{winner === "X" ? "Você venceu!!" : "Computador venceu! oh no :("}</span>) 
+        }
+        <div className="flex flex-row gap-x-4">
+          <button 
+            className="reset bg-[#473080] mt-10 mb-8 p-2 w-18 rounded hover:shadow-2xl hover:shadow-purple-500" 
+            type="button" onClick={resartGame}>Reiniciar
+          </button>
+          <button 
+            className="reset bg-[#473080] mt-10 mb-8 p-2 w-18 rounded hover:shadow-2xl hover:shadow-purple-500" 
+            type="button" onClick={back}>Voltar
+          </button>
+          <button 
+            className="reset bg-[#473080] mt-10 mb-8 p-2 w-18 rounded hover:shadow-2xl hover:shadow-purple-500" 
+            type="button" onClick={exit}>Abandonar
+          </button>
+        </div>
       </div>
     </div>
   );
