@@ -104,9 +104,12 @@ export const TicTacToe = () => {
   const back = () => navigate('/jogo-da-velha');
   const inicio = () => navigate('/');
   const exit = () => {
-    if (confirm("Deseja sair mesmo?"))
+    if (confirm("Deseja sair mesmo?")) {
       alert("então, tá.");
       back();
+    } else {
+      return;
+    }
   }
   return (
     <div className="tic-tac-toe h-screen w-full xl:h-screen bg-[#0f172a] text-[#FFFFFF] pt-20 pb-10 flex flex-col xl:flex-row justify-center">
