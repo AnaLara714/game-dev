@@ -12,14 +12,14 @@ export const TicTacToeHome = () => {
       <Helmet>
         <title>GameDev | Jogo da velha</title>
       </Helmet>
-      <div className="h-screen w-full bg-[#0f172a] text-[#FFFFFF]">
+      <div className="max-sm:h-full h-screen w-full bg-[#0f172a] text-[#FFFFFF]">
         <Sidebar/>
         <div className="flex flex-col items-center max-sm:ml-24">
           <div className='bg-[#473080] rounded-full p-2 flex justify-center items-center h-20 w-20 mb-2 mt-4'>
             <img src={TicTacToeIcon} className='h-14'/>
           </div>
           <span className="text-2xl font-bold mb-4">Jogo da Velha</span>
-          <div className="flex flex-col w-[28rem] border flex-wrap p-4 divide-y gap-y-5 divide-[#473080] rounded-md border-[#473080] max-sm:w-80">
+          <div className="flex flex-col w-[28rem] border flex-wrap p-4 divide-y gap-y-5 divide-[#473080] rounded-md border-[#473080] max-sm:w-64">
             <div className="flex flex-col">
               <span className="font-semibold italic">O que é?</span>
               <span className="pl-4 pt-1 flex flex-wrap">

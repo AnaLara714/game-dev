@@ -22,9 +22,9 @@ export const Main = () => {
   }
 
   return (
-    <div className="flex justify-center flex-col items-center mt-[8rem] flex-wrap">
+    <div className="flex justify-center flex-col items-center mt-[8rem] flex-wrap sm:pl-14 bg-[#0f172a] sm:h-full">
       <span className="text-2xl font-semibold">Escolha um jogo para se divertir!</span>
-      <div className="flex flex-row gap-x-12 mt-8">
+      <div className="flex flex-row gap-x-12 mt-8 flex-wrap sm:pl-14">
         <GameOption icon={TicTacToe} name={"Jogo da Velha"} router={goToTicTacToe}/>
         <GameOption icon={RockPaperScissors} name={"Pedra, Papel e Tersoura"}/>
         <GameOption icon={Pong} name={"Pong"}/>

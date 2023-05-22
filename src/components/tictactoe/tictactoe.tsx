@@ -106,7 +106,7 @@ export const TicTacToe = () => {
   const exit = () => {
     if (confirm("Deseja sair mesmo?")) {
       alert("então, tá.");
-      back();
+      inicio();
     } else {
       return;
     }
@@ -114,7 +114,7 @@ export const TicTacToe = () => {
   return (
     <div className="tic-tac-toe h-screen w-full xl:h-screen bg-[#0f172a] text-[#FFFFFF] pt-20 pb-10 flex flex-col xl:flex-row justify-center">
       <Sidebar/>
-      <div className="flex flex-col items-center justify-center max-sm:ml-8">
+      <div className="flex flex-col items-center justify-center max-sm:ml-24 max-sm:scale-[85%]">
         <div className='bg-[#473080] rounded-full p-2 flex justify-center items-center h-20 w-20 mb-2'>
           <img src={TicTacToeIcon} className='h-14'/>
         </div>
